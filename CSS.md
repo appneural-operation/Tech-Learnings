@@ -185,3 +185,87 @@
 👉 **Use case:** Modern UI effects, unique layouts।
 
 ---
+
+Perfect 👍 हम बिल्कुल step-by-step चलेंगे।
+मैं सबसे पहले **CSS Basics → Syntax & Selectors** से शुरू करता हूँ, फिर आप बताना कि मैं अगले topic पर जाऊँ या इसको aur detail me samjhाऊँ।
+
+---
+
+## 1. **CSS Syntax & Selectors**
+
+👉 CSS (Cascading Style Sheets) का काम है **HTML elements को style देना** – जैसे color, size, position, spacing आदि।
+
+### CSS Rule ka Structure
+
+```css
+selector {
+  property: value;
+}
+```
+
+* **selector** → किस element पर style apply करनी है (जैसे `p`, `h1`, `.class`, `#id`)
+* **property** → कौन सा style change करना है (जैसे `color`, `font-size`, `margin`)
+* **value** → उस property ka value (जैसे `red`, `20px`)
+
+### Example
+
+```css
+h1 {
+  color: blue;         /* text color */
+  font-size: 30px;     /* text size */
+}
+
+p {
+  color: gray;
+  line-height: 1.5;
+}
+```
+
+---
+
+### **Types of CSS Selectors**
+
+1. **Element Selector** → किसी tag को target करना
+
+   ```css
+   p { color: red; }
+   ```
+
+2. **Class Selector** (`.`) → किसी group of elements को target करना
+
+   ```css
+   .highlight { background: yellow; }
+   ```
+
+3. **ID Selector** (`#`) → unique element को target करना
+
+   ```css
+   #main { padding: 20px; }
+   ```
+
+4. **Universal Selector** (`*`) → सारे elements पर apply होगा
+
+   ```css
+   * { margin: 0; padding: 0; }
+   ```
+
+5. **Group Selector** (`,`) → multiple selectors को combine करना
+
+   ```css
+   h1, h2, p { font-family: Arial; }
+   ```
+
+6. **Descendant Selector** → nested elements
+
+   ```css
+   div p { color: blue; }   /* div ke andar wale p */
+   ```
+
+---
+
+✅ **Use case**:
+Selectors help करते हैं **किस element को style देना है ये define करने में।**
+Without selectors, CSS useless है क्योंकि पता ही नहीं चलेगा style कहाँ apply करनी है।
+
+---
+
