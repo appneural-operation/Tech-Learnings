@@ -496,4 +496,132 @@ h1 {
 
 ---
 
+## **3. CSS Box Model**
+
+### **Definition:**
+
+* हर HTML element **एक box** की तरह behave करता है।
+* CSS Box Model define करता है कि **element का size और spacing कैसे calculate होगी।**
+
+---
+
+### **Components of Box Model**
+
+1. **Content**
+
+   * Element का **actual content** (text, image, etc.)
+   * Size: `width` और `height`
+
+2. **Padding**
+
+   * Content और Border के बीच का **inner space**
+   * Background color padding तक extend होती है
+
+3. **Border**
+
+   * Content + padding के चारों ओर **line**
+   * Width, style, color set कर सकते हैं
+
+   ```css
+   border: 2px solid black;
+   ```
+
+4. **Margin**
+
+   * Border के बाहर का **outer space**
+   * Neighbor elements से distance create करता है
+   * Transparent hota है
+
+---
+
+### **Visual Diagram**
+
+```
++-------------------------+
+|        Margin           |
+|  +-------------------+  |
+|  |      Border       |  |
+|  |  +-------------+  |  |
+|  |  |   Padding   |  |  |
+|  |  | +---------+ |  |  |
+|  |  | | Content | |  |  |
+|  |  | +---------+ |  |  |
+|  |  +-------------+  |  |
+|  +-------------------+  |
++-------------------------+
+```
++-------------------------------+
+|           Margin (30px)       |  ← Transparent space
+|  +-------------------------+  |
+|  |       Border (5px)       |  ← Red / Green
+|  |  +-------------------+  |
+|  |  |   Padding (20px)  |  ← Yellow
+|  |  |  +-------------+  |  
+|  |  |  |  Content    |  |  ← Light Blue / Light Green
+|  |  |  +-------------+  |
+|  |  +-------------------+  |
+|  +-------------------------+  |
++-------------------------------+
+
+
+---
+
+### **CSS Example**
+
+```css
+div {
+  width: 200px;          /* content width */
+  padding: 20px;         /* space inside */
+  border: 5px solid red; /* border around */
+  margin: 30px;          /* space outside */
+  background-color: lightblue;
+}
+```
+
+**Total Width Calculation:**
+
+```
+total width = margin-left + border-left + padding-left + content-width + padding-right + border-right + margin-right
+= 30 + 5 + 20 + 200 + 20 + 5 + 30 = 310px
+```
+
+---
+
+### **Box-sizing Property**
+
+```css
+box-sizing: border-box;
+```
+
+* Border और padding को **width में include** कर देता है
+* मतलब `width: 200px` → **content + padding + border = 200px**
+
+**Example:**
+
+```css
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box; /* total width = 200px */
+}
+```
+
+---
+
+### ✅ **Use Cases**
+
+1. Proper spacing design करना
+2. Card, box, container alignment
+3. Layout calculation आसान करना
+
+---
+
+💡 **Tip:**
+
+* Modern websites में **box-sizing: border-box** default use होता है, ताकि layout आसानी से manage हो।
+
+---
+
+
 
