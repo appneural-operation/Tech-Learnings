@@ -265,3 +265,235 @@ Without selectors, CSS useless है क्योंकि पता ही न
 
 ---
 
+## **2. Colors & Units**
+
+### **1️⃣ Colors in CSS**
+
+CSS में colors element के **text, background, borders** आदि में use होते हैं।
+
+#### **Ways to define colors**
+
+1. **Color Name**
+
+```css
+p {
+  color: red;
+}
+```
+
+2. **HEX Code**
+
+```css
+h1 {
+  color: #ff0000; /* red */
+}
+```
+
+3. **RGB**
+
+```css
+div {
+  background-color: rgb(0, 255, 0); /* green */
+}
+```
+
+4. **RGBA** (opacity)
+
+```css
+div {
+  background-color: rgba(0, 0, 255, 0.5); /* blue with 50% transparency */
+}
+```
+
+5. **HSL**
+
+```css
+p {
+  color: hsl(240, 100%, 50%); /* blue */
+}
+```
+
+---
+
+### **2️⃣ CSS Units**
+
+Units element का **size, spacing, position** define करने के लिए use होते हैं।
+
+#### **Absolute Units**
+
+* `px` → pixels, fixed size
+* `cm, mm, in` → print media
+
+```css
+div {
+  width: 200px;
+  height: 100px;
+}
+```
+
+#### **Relative Units**
+
+* `%` → parent element ke respect me
+* `em` → relative to font-size of parent
+* `rem` → relative to root (`html`) font-size
+* `vh` → 1% of viewport height
+* `vw` → 1% of viewport width
+
+**Example:**
+
+```css
+div {
+  width: 50%;      /* parent ka 50% width */
+  font-size: 2rem; /* root font-size ka double */
+  height: 50vh;    /* screen height ka 50% */
+}
+```
+
+---
+##Examples
+
+## 🔹 1. `% (Percentage)`
+
+* **Meaning:** किसी property को **parent element के respect** में set करता है।
+* **Use Cases:**
+
+  * Width, height, padding, margin आदि flexible बनाने के लिए
+  * Responsive layout में useful
+
+**Example:**
+
+```css
+.parent {
+  width: 400px;
+  height: 200px;
+  background: lightblue;
+}
+
+.child {
+  width: 50%;  /* parent width ka 50% */
+  height: 50%; /* parent height ka 50% */
+  background: orange;
+}
+```
+
+➡️ Child ka size **parent ke 50%** hoga.
+
+---
+
+## 🔹 2. `em`
+
+* **Meaning:** Relative to **font-size of its parent**
+* **Use Cases:**
+
+  * Font size flexible rakhne ke liye
+  * Padding, margin ko font size ke respect me scale karne ke liye
+
+**Example:**
+
+```css
+.parent {
+  font-size: 20px;
+}
+
+.child {
+  font-size: 2em; /* 2 * parent font-size = 40px */
+  padding: 1em;   /* 1 * parent font-size = 20px */
+}
+```
+
+💡 **Tip:** em depends on **parent font-size**, agar parent change hua → child bhi adjust hoga
+
+---
+
+## 🔹 3. `rem`
+
+* **Meaning:** Relative to **root (html) font-size**, usually 16px by default
+* **Use Cases:**
+
+  * Font size ko globally consistent rakhne ke liye
+  * Responsive design me predictably scale karne ke liye
+
+**Example:**
+
+```css
+html {
+  font-size: 16px;
+}
+
+p {
+  font-size: 2rem; /* 2 * 16px = 32px */
+}
+```
+
+💡 Difference from `em`:
+
+* `em` → parent pe depend karta hai
+* `rem` → hamesha root (html) pe depend karega
+
+---
+
+## 🔹 4. `vh` (Viewport Height)
+
+* **Meaning:** 1vh = **1% of viewport height** (screen ki height)
+* **Use Cases:**
+
+  * Full screen layouts
+  * Hero sections, fullscreen images, height responsive elements
+
+**Example:**
+
+```css
+.hero {
+  height: 100vh;  /* screen ki height ka 100% */
+  background: lightgreen;
+}
+```
+
+---
+
+## 🔹 5. `vw` (Viewport Width)
+
+* **Meaning:** 1vw = **1% of viewport width** (screen ki width)
+* **Use Cases:**
+
+  * Responsive typography
+  * Full width elements
+  * Spacing elements relative to screen size
+
+**Example:**
+
+```css
+h1 {
+  font-size: 5vw;  /* font size screen width ke 5% ke equal */
+}
+```
+
+---
+
+### 🔑 **Quick Guide: When to Use**
+
+| Unit  | Best For                                                    |
+| ----- | ----------------------------------------------------------- |
+| `%`   | Width, height, padding, margin (parent-relative)            |
+| `em`  | Font size, spacing relative to parent font size             |
+| `rem` | Font size, spacing relative to root font size (consistent)  |
+| `vh`  | Full height sections, responsive layout                     |
+| `vw`  | Responsive width, scaling text/elements according to screen |
+
+---
+
+### ✅ **Use Cases**
+
+1. **Colors** → Text, backgrounds, borders attractive बनाना।
+2. **Units** → Responsive design और spacing control करना।
+
+---
+
+💡 **Tip:**
+
+* Absolute units → fixed design (desktop focused)
+* Relative units → responsive design (mobile + desktop)
+
+---
+
+
